@@ -30,6 +30,9 @@ public class Task extends AbstractEntity<Long> {
     @Nullable
     private LocalDate dueDate;
 
+    @Column(name = "completed", nullable = false)
+    private boolean completed = false;
+
     @Override
     public @Nullable Long getId() {
         return id;
@@ -57,5 +60,13 @@ public class Task extends AbstractEntity<Long> {
 
     public void setDueDate(@Nullable LocalDate dueDate) {
         this.dueDate = dueDate;
+    }
+
+    public boolean isCompleted() {
+        return completed;
+    }
+
+    public void setCompleted(boolean completed) {
+        this.completed = completed;
     }
 }
